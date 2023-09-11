@@ -1,4 +1,4 @@
-import {createBrowserRouter} from "react-router-dom"
+import {Navigate, createBrowserRouter} from "react-router-dom"
 import {UserList} from "./pages/UserList"
 import {PostList} from "./pages/PostList"
 import {TodoList} from "./pages/TodoList"
@@ -10,6 +10,7 @@ export const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       //todo index page
+      {index: true, element: <Navigate to="posts" />},
       {path: "users", element: <UserList />},
       {path: "posts", element: <PostList />},
       {path: "todos", element: <TodoList />}
