@@ -9,10 +9,10 @@ export const router = createBrowserRouter([
     path: "/",
     element: <RootLayout />,
     children: [
-      //todo index page
       {index: true, element: <Navigate to="posts" />},
       {path: "users", element: <UserList />},
       {path: "posts", element: <PostList />},
+      //todo: children
       {path: "todos", element: <TodoList />}
     ]
   }
