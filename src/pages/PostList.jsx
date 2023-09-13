@@ -3,12 +3,11 @@ function PostList() {
   return <h1>PostList</h1>
 }
 
-const loader = ({request: {signal}}) => {
-  return axios
-    .get(`http://localhost:3000/posts`, {
-      signal
-    })
-    .then(res => res.data)
+const loader = async ({request: {signal}}) => {
+  const res = await axios.get(`http://localhost:3000/posts`, {
+    signal
+  })
+  return res.data
 }
 
 export const postListRoute = {
