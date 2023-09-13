@@ -1,6 +1,7 @@
 import axios from "axios"
 import {Link, useLoaderData} from "react-router-dom"
 function PostList() {
+  const posts = useLoaderData()
   return (
     <>
       <div className="container">
@@ -13,7 +14,7 @@ function PostList() {
                 <div className="card-preview-text">{post.body}</div>
               </div>
               <div className="card-footer">
-                <Link className="btn" to="post.html">
+                <Link className="btn" to={`/posts/${post.id}`}>
                   View
                 </Link>
               </div>
