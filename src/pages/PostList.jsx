@@ -1,7 +1,6 @@
 import axios from "axios"
 import {Link, useLoaderData} from "react-router-dom"
 function PostList() {
-  const posts = useLoaderData()
   return (
     <>
       <div className="container">
