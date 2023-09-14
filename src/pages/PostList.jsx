@@ -4,7 +4,7 @@ function PostList() {
   const posts = useLoaderData()
   return (
     <>
-      <div className="container">
+      <di className="container">
         <h1 className="page-title">Posts</h1>
         <div className="card-grid">
           {posts.map(post => (
@@ -21,12 +21,12 @@ function PostList() {
             </div>
           ))}
         </div>
-      </div>
+      </di>
     </>
   )
 }
 
-export const postListRoute = {
+export const PostListRoute = {
   loader: async ({request: {signal}}) => {
     const res = await axios.get(`http://localhost:3000/posts`, {
       signal

@@ -1,16 +1,16 @@
 import axios from "axios"
-
+import {Link, useLoaderData} from "react-router-dom"
 function UserList() {
+  const posts = useLoaderData()
   return <h1>UserList</h1>
 }
-//export const loader = ({request: {signal}}) => {
-//  return axios.get(`http://localhost:3000/users`, {signal})
-//  element: <UserList />
-//}
 
-export const userListRoute = {
-  loader: ({request: {signal}}) => {
-    return axios.get(`http://localhost:3000/users`, {signal})
+export const UserListRoute = {
+  loader: async ({request: {signal}}) => {
+    const res = await axios.get(`http://localhost:3000/users`, {
+      signal
+    })
+    return res.data
   },
   element: <UserList />
 }

@@ -1,6 +1,6 @@
 import {Navigate, createBrowserRouter} from "react-router-dom"
-import {userListRoute} from "./pages/UserList"
-import {postListRoute} from "./pages/PostList"
+import {UserListRoute} from "./pages/UserList"
+import {PostListRoute} from "./pages/PostList"
 import {TodoList} from "./pages/TodoList"
 import {RootLayout} from "./layouts/RootLayout"
 
@@ -15,7 +15,7 @@ export const router = createBrowserRouter([
         children: [
           {
             index: true,
-            ...userListRoute
+            ...UserListRoute
           }
         ]
       },
@@ -24,7 +24,7 @@ export const router = createBrowserRouter([
         children: [
           {
             index: true,
-            ...postListRoute
+            ...PostListRoute
           },
           {path: ":postId", element: <h1>hi</h1>}
         ]
