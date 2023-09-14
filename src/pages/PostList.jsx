@@ -8,7 +8,7 @@ function PostList() {
         <h1 className="page-title">Posts</h1>
         <div className="card-grid">
           {posts.map(post => (
-            <div className="card">
+            <div key={post.id} className="card">
               <div className="card-header">{post.title}</div>
               <div className="card-body">
                 <div className="card-preview-text">{post.body}</div>
@@ -26,14 +26,12 @@ function PostList() {
   )
 }
 
-const loader = async ({request: {signal}}) => {
-  const res = await axios.get(`http://localhost:3000/posts`, {
-    signal
-  })
-  return res.data
-}
-
 export const postListRoute = {
-  loader,
+  loader: async ({request: {signal}}) => {
+    const res = await axios.get(`http://localhost:3000/posts`, {
+      signal
+    })
+    return res.data
+  },
   element: <PostList />
 }
