@@ -1,6 +1,6 @@
-import {baseApi} from "./base"
+import axios from "axios"
 
 export function getPosts(options) {
-  return baseApi.get("/posts", options).then(res => res.data)
+  return axios.get("/posts", options).then(res => res.data)
 }
 axios
