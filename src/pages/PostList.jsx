@@ -1,4 +1,5 @@
 import axios from "axios"
+import {getPosts} from "../api/posts"
 import {Link, useLoaderData} from "react-router-dom"
 function PostList() {
   const posts = useLoaderData()
@@ -27,9 +28,7 @@ function PostList() {
 }
 
 const loader = ({request: {signal}}) => {
-  return axios
-    .get(`http://localhost:3000/posts`, {signal})
-    .then(res => res.data)
+  return getPosts({signal})
 }
 
 export const PostListRoute = {

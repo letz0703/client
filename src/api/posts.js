@@ -1,6 +1,5 @@
-import axios from "axios"
+import {baseAPI} from "./base"
 
 export function getPosts(options) {
-  return axios.get("/posts", options).then(res => res.data)
+  return baseAPI.get("posts", options).then(res => res.data)
 }
-axios
