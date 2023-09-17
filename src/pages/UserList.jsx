@@ -1,5 +1,5 @@
 import axios from "axios"
-import {Link, useLoaderData} from "react-router-dom"
+import {useLoaderData} from "react-router-dom"
 function UserList() {
   const posts = useLoaderData()
   return <h1>UserList</h1>

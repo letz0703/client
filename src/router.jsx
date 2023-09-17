@@ -9,7 +9,7 @@ export const router = createBrowserRouter([
     path: "/",
     element: <RootLayout />,
     children: [
-      {index: true, element: <Navigate to="posts" />},
+      {index: true, element: <h1>root</h1>},
       {
         path: "users",
         children: [

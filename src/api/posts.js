@@ -1,10 +1,6 @@
-import axios from "axios"
+import {baseApi} from "./base"
 
 export function getPosts(options) {
-  return (
-    axios
-      .get("http://localhost:3000/users", options)
-      //.get("https://www.especialist.org/json_api/db.json", options)
-      .then(res => res.data)
-  )
+  return baseApi.get("/posts", options).then(res => res.data)
 }
+axios
