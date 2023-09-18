@@ -5,8 +5,8 @@ function PostList() {
   const posts = useLoaderData()
   return (
     <>
-      <di className="container">
-        <h1 className="page-title">Posts</h1>
+      <div className="container">
+        <h1 className="page-title">Posts- {posts.length}</h1>
         <div className="card-grid">
           {posts.map(post => (
             <div key={post.id} className="card">
@@ -22,7 +22,7 @@ function PostList() {
             </div>
           ))}
         </div>
-      </di>
+      </div>
     </>
   )
 }
