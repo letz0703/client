@@ -28,6 +28,10 @@ function UserList() {
   )
 }
 
+const loader = ({request: {signal}}) => {
+  return getUsers({signal})
+}
+
 export const UserListRoute = {
   loader,
   element: <UserList />
