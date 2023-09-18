@@ -11,12 +11,13 @@ function UserList() {
             <>
               <div className="card-header">{user.name}</div>
               <div className="card-body">
-                <div>{user.username}</div>
+                <div>{user.company.name}</div>
+                <div>{user.website}</div>
                 <div>{user.email}</div>
-                <div>from {user.address.city}</div>
               </div>
               <div className="card-footer">
-                <Link className="btn" to={`/users/${user.id}`}>
+                <Link className="btn" to={user.id.toString()}>
+                  {/*<Link className="btn" to={`/users/${user.id}`}>*/}
                   View
                 </Link>
               </div>
