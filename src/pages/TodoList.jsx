@@ -8,7 +8,10 @@ function TodoList() {
         <h1 class="page-title">Todos</h1>
         <ul>
           {todos.map(todo => (
-            <li key={todo.id} className={todo.completed ? "hidden" : ""}>
+            <li
+              key={todo.id}
+              className={todo.completed ? "strike-through" : ""}
+            >
               <input type="checkbox" checked={todo.completed} />
               {todo.title}
             </li>
