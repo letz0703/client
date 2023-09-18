@@ -16,6 +16,10 @@ export const router = createBrowserRouter([
           {
             index: true,
             ...UserListRoute
+          },
+          {
+            path: ":userId",
+            element: <h1>user</h1>
           }
         ]
       },
