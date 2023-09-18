@@ -1,8 +1,7 @@
-import axios from "axios"
 import {Link, useLoaderData} from "react-router-dom"
+import {getUsers} from "../api/users.jsx"
 function UserList() {
   const users = useLoaderData()
-  //return <h1>UserList</h1>
   return (
     <>
       <div className="container">
@@ -30,11 +29,6 @@ function UserList() {
 }
 
 export const UserListRoute = {
-  loader: async ({request: {signal}}) => {
-    const res = await axios.get(`http://localhost:3000/users`, {
-      signal
-    })
-    return res.data
-  },
+  loader,
   element: <UserList />
 }
