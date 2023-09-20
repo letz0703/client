@@ -4,8 +4,8 @@ function TodoList() {
   const todos = useLoaderData()
   return (
     <>
-      <div class="container">
-        <h1 class="page-title">Todos</h1>
+      <div className="container">
+        <h1 className="page-title">Todos</h1>
         <ul>
           {todos.map(todo => (
             <li
