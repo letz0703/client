@@ -1,9 +1,14 @@
-import {useLoaderData} from "react-router-dom"
+import {Link, useLoaderData} from "react-router-dom"
 import {getPost} from "../api/posts"
 
 function Post() {
   const post = useLoaderData()
-  return post.title
+  return (
+    <>
+      <h1 className="page-title">{post.title}</h1>
+      <div>{post.body}</div>
+    </>
+  )
 }
 
 const loader = ({request: {signal}, params}) => {

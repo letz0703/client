@@ -12,7 +12,6 @@ function TodoList() {
               key={todo.id}
               className={todo.completed ? "strike-through" : ""}
             >
-              <input type="checkbox" checked={todo.completed} />
               {todo.title}
             </li>
           ))}
