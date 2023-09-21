@@ -1,7 +1,9 @@
-import {Link, useLoaderData} from "react-router-dom"
+import {useLoaderData} from "react-router-dom"
 import {getUsers} from "../api/users.jsx"
+
 function UserList() {
-  return <>hi</>
+  const user = useLoaderData()
+  return "hi"
   //const users = useLoaderData()
   //return (
   //  <>
@@ -30,8 +32,9 @@ function UserList() {
   //)
 }
 
-const loader = ({request: {signal}}) => {
-  return <h1>hi</h1>
+const loader = ({request: {signal}}, params) => {
+  //return getUsers(params.id, {signal})
+  return "hi"
 }
 
 export const UserListRoute = {

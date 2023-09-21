@@ -4,6 +4,7 @@ import {PostListRoute} from "./pages/PostList"
 import {todoListRoute} from "./pages/TodoList"
 import {postRoute} from "./pages/Post"
 import {RootLayout} from "./layouts/RootLayout"
+import {userRoute} from "./pages/User"
 
 export const router = createBrowserRouter([
   {
@@ -23,7 +24,13 @@ export const router = createBrowserRouter([
       },
       {
         path: "users",
-        ...UserListRoute
+        children: [
+          {
+            index: true,
+            ...UserListRoute
+          },
+          {path: ":userId", ...userRoute}
+        ]
       },
 
       //{path: "posts", element: <PostList />},
