@@ -1,7 +1,6 @@
 import {Link, Outlet} from "react-router-dom"
 
 export function RootLayout() {
-  //return <Outlet />
   return (
     <>
       <nav className="top-nav">
