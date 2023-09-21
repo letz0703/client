@@ -1,4 +1,3 @@
-import axios from "axios"
 import {getPosts} from "../api/posts"
 import {Link, useLoaderData} from "react-router-dom"
 function PostList() {
