@@ -1,8 +1,9 @@
 import {useLoaderData} from "react-router-dom"
+import {getUser} from "../api/users"
 
 function User() {
   const user = useLoaderData()
-  return user.userId
+  return user.name
 }
 
 const loader = ({request: {signal}, params}) => {
