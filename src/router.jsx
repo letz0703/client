@@ -32,7 +32,6 @@ export const router = createBrowserRouter([
           {path: ":userId", ...userRoute}
         ]
       },
-
       {path: "todos", ...todoListRoute}
     ]
   }
