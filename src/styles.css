@@ -5,6 +5,10 @@
 * {
   box-sizing: border-box;
 }
+h1 {
+  font-weight: bold;
+  font-size: 3em;
+}
 
 body {
   margin: 0;
