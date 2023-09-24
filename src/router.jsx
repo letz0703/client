@@ -32,7 +32,8 @@ export const router = createBrowserRouter([
           {path: ":userId", ...userRoute}
         ]
       },
-      {path: "todos", ...todoListRoute}
+      {path: "todos", ...todoListRoute},
+      {path: "*", element: <h1>404-page Not Found</h1>}
     ]
   }
 ])
