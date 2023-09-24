@@ -1,4 +1,4 @@
-import {Navigate, createBrowserRouter} from "react-router-dom"
+import {Navigate, createBrowserRouter, useRouteError} from "react-router-dom"
 import {UserListRoute} from "./pages/UserList"
 import {PostListRoute} from "./pages/PostList"
 import {todoListRoute} from "./pages/TodoList"
@@ -11,9 +11,9 @@ export const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       {
-        errorElement: <h1>page not found - 404</h1>,
+        errorElement: <ErrorPage />,
         children: [
-          {index: true, element: <h1>root</h1>},
+          {index: true, element: <Navigate to="/posts" />},
           {
             path: "posts",
             children: [
@@ -41,3 +41,19 @@ export const router = createBrowserRouter([
     ]
   }
 ])
+
+function ErrorPage() {
+  return (
+    <>
+      <h1 className={`text-gray-500 text-[18px]`}>Something Wrong</h1>
+      {import.meta.env.MODE !== "production" && (
+        <>
+          <pre className={`text-red-500 text-2xl`}>
+            {useRouteError().message}
+          </pre>
+          <div className={`text-[17px]`}>{useRouteError().stack}</div>
+        </>
+      )}
+    </>
+  )
+}
